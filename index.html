@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Marian Hotel</title>
+  <meta name="description" content="Welcome To Marian  Hotel, Calabar. Where you experience a blends hospitality and Culture">
+  <link rel="icon" href="https://res.cloudinary.com/dpgvsald5/image/upload/v1758620244/favico_ajtm9c.png">
+  <!-- Bootstrap CSS (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-sticky">
+    <div class="container">
+      
+      <a class="navbar-brand" href="index.html">Marian  Hotel</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="rooms.html">Rooms</a></li>
+          <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="restaurant.html">Restaurant & Bar</a></li>
+        </ul>
+        <a href="rooms.html" class="btn btn-primary ms-3">Book Now</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Banner -->
+  <!-- Hero Banner Carousel -->
+  <header>
+    <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+      <div class="carousel-inner">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <img src="images/pcview.jpg" class="d-block w-100" alt="Marian Hotel Exterior">
+          <div class="carousel-caption d-none d-md-block">
+            <h6 class="subtitle">Welcome To</h6>
+            <h1 class="display-4 fw-bold">Marian Hotel, Calabar.</h1>
+            <p class="lead">Where you experience a blend of hospitality and culture</p>
+            <div class="mt-4">
+              <a href="rooms.html" class="btn btn-outline-light btn-lg me-2">Browse Rooms</a>
+              <a href="https://wa.me/2348033983293" target="_blank" class="btn btn-primary btn-lg">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <img src="images/Restaurant.jpg" class="d-block w-100" alt="Marian Hotel Restaurant">
+          <div class="carousel-caption d-none d-md-block">
+            <h1 class="display-5 fw-bold">Taste Culinary Excellence</h1>
+            <p>Experience fine dining and local flavors at our in-house restaurant & bar.</p>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+          <img src="images/events.jpg" class="d-block w-100" alt="Marian Hotel Event Hall">
+          <div class="carousel-caption d-none d-md-block">
+            <h1 class="display-5 fw-bold">Host Memorable Events</h1>
+            <p>Our modern halls are perfect for weddings, meetings, and conferences.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+
+      <!-- Indicators -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+      </div>
+    </div>
+  </header>
+
+ 
+
+  <!-- Rooms preview -->
+  <section id="rooms-preview" class="py-5 bg-light">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h2>Our Rooms</h2>
+        <p class="text-muted">Both refined and inventive Marian  Hotel combines historic legacy with contemporary luxury.</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Diplomatic Suite -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="images/stan.jpg" loading="lazy" alt="Diplomatic Suite">
+            <div class="card-body text-center">
+              <h5 class="card-title">Standard Room</h5>
+              <p class="card-text">From ₦50,000.00 /night • 6x4</p>
+              <button class="btn btn-success book-btn" for="resRoom" id="resBookBtn" data-room="Diplomatic Suite • ₦150,000 • 60 Sqm">Book now</button>
+            </div>
+          </div>
+        </div>
+        
+
+        <!-- Executive Room -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="images/rm1.jpg" class="card-img-top" alt="Executive Room">
+            <div class="card-body text-center">
+              <h5 class="card-title">Executive Room</h5>
+              <p class="card-text">From ₦50,000.00 /night • 1 King Bed Sleeps 2 6x6</p>
+              <button class="btn btn-success book-btn" for="resRoom" id="resBookBtn" data-room="Executive Room • ₦105,000 • 42 Sqm">Book now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Classic Room -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="images/rm4.jpg" class="card-img-top" alt="Classic Room">
+            <div class="card-body text-center">
+              <h5 class="card-title">Suite</h5>
+              <p class="card-text">From ₦80,000.00 /night 6x6</p>
+              <button class="btn btn-success book-btn" for="resRoom" id="resBookBtn" data-room="Classic Room • ₦80,000 • 46 Sqm">Book now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Deluxe Room -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="images/apt.jpg" class="card-img-top" loading="lazy" alt="Deluxe Room">
+            <div class="card-body text-center">
+              <h5 class="card-title" id="resRoom" >Apartment 2bed</h5>
+              <p class="card-text">From ₦150,000.00 /night  </p>
+              <button class="btn btn-success book-btn" for="resRoom" id="resBookBtn" data-room="Deluxe Room • ₦90,000 • 35 Sqm">Book now</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="text-center mt-4">
+        <a href="rooms.html" class="btn btn-outline-primary">Explore Rooms</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Restaurant & Events teaser -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-md-6">
+          <h3>Our Restaurant</h3>
+          <p>Our restaurant is designed to satisfy your cravings with a diverse menu, top-quality ingredients, and a welcoming atmosphere for every guest.</p>
+          <a href="restaurant.html" class="btn btn-outline-primary">Schedule a Call</a>
+        </div>
+        <div class="col-md-6 text-center">
+          <img src="images/Restaurant.jpg" alt="Marian  Hotel" class="img-fluid rounded">
+        </div>
+        <div class="col-md-6">
+          <h3>Event and Meeting Hall</h3>
+          <p>Our Event Hall offers a sophisticated and flexible venue ideal for corporate seminars, workshops, weddings and community events. Modern AV equipment and on-site hospitality services are available.</p>
+          <a href="events.html" class="btn btn-outline-primary">Reserve a spot</a>
+        </div>
+        <div class="col-md-6 text-center">
+          <img src="images/events.jpg" alt="Marian  Hotel" class="img-fluid rounded">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials (short) -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h3 class="text-center">Guest Feedback</h3>
+      <div class="row mt-4">
+        <div class="col-md-4">
+          <blockquote class="blockquote">
+            <p>"I had an amazing stay at Igolo Abiam’s Place! The rooms are spacious, well-furnished, and truly feel like home."</p>
+            <footer class="blockquote-footer">Amaka O</footer>
+          </blockquote>
+        </div>
+        <div class="col-md-4">
+          <blockquote class="blockquote">
+            <p>"As a digital entrepreneur, finding a hotel with a fully equipped ICT Hub was a game-changer!"</p>
+            <footer class="blockquote-footer">David Eze</footer>
+          </blockquote>
+        </div>
+        <div class="col-md-4">
+          <blockquote class="blockquote">
+            <p>"We stayed in a three-bedroom apartment, and it was perfect for our family trip."</p>
+            <footer class="blockquote-footer">Mr. Oyeyemi</footer>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+   <!-- Facilities & About Snippet -->
+   <section class="py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <h2>Learn More</h2>
+          <h3>About Us</h3>
+          <p>A pioneer in the hospitality business in the South-South region of Nigeria, Marian Hotels Calabar was established in 1980 and operated by Marian Hotel Ltd. A company that started business in 1971 and was fully incorporated in 1977 specializing in hotel, tourism and hospitality business. Recipient of the prestigious XIV International Award for tourist, hotels and catering industry, Madrid, Spain in 1989, Marian Hotels Calabar is located in the prime business district of Calabar metropolis, aAbout a 10 minute drive from the Margaret Ekpo International Airport and about 20 minute leisure drive to both the Calabar free trade zone and the Tinapa projects. Ours is service backed by over three (3) decades of experience in the business. You should count on us to make your stay a cherished one.</p>
+          <a href="about.html" class="btn btn-outline-primary">Reach out here</a>
+        </div>
+        <div class="col-md-6 text-center">
+          <img src="images/scenery.jpg" alt="Marian  Hotel" class="img-fluid rounded">
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Reservation section (anchor target) -->
+  <section id="reservation" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Make a Reservation</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <form id="reservationForm" class="row g-3">
+            <div class="col-md-6">
+              <label for="resRoom" class="form-label">Room</label>
+              <select id="resRoom" class="form-select">
+                <option>Suite • ₦80,000 • 6x6</option>
+                <option>Standard Room • ₦50,000 • 6x4</option>
+                <option>Executive Room • ₦50,000 • 6x6</option>
+                <option>Apartment 2 bedroom • ₦150,000 </option>
+                <option>Apartment 1 bedroom • ₦100,000 </option>
+                <option>Apartment Single Room • ₦50,000 </option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label for="resName" class="form-label">Full name</label>
+              <input type="text" id="resName" class="form-control" placeholder="Your full name">
+            </div>
+            <div class="col-md-6">
+              <label for="resCheckin" class="form-label">Check-in</label>
+              <input type="date" id="resCheckin" class="form-control">
+            </div>
+            <div class="col-md-6">
+              <label for="resCheckout" class="form-label">Check-out</label>
+              <input type="date" id="resCheckout" class="form-control">
+            </div>
+            <div class="col-md-3">
+              <label for="resAdults" class="form-label">Adults</label>
+              <input type="number" id="resAdults" class="form-control" min="1" value="2">
+            </div>
+            <div class="col-md-3">
+              <label for="resChildren" class="form-label">Children</label>
+              <input type="number" id="resChildren" class="form-control" min="0" value="0">
+            </div>
+            <div class="col-md-6 d-flex align-items-end">
+              <button type="button" id="resBookBtn" class="btn btn-success w-100">Book via WhatsApp</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-light py-4">
+    <div class="container text-center">
+      <p class="mb-1">No. 125 Old Ikang Rd, Big Qua Town, Calabar 540281, Cross River.</p>
+      <p class="mb-1">Phone: +234 803 940 3488</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="js/script.js"></script>
+</body>
+</html>
