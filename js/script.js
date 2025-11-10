@@ -1,69 +1,121 @@
-// Global config
-const WA_NUMBER_PRIMARY = '2348104391070'; // main WhatsApp (no plus)
 
-// Helper to open WhatsApp with message
-function openWhatsApp(number, message) {
-  const url = `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
-  window.open(url, '_blank');
+
+
+// === Global Config ===
+const WA_NUMBER_PRIMARY = '2348104391070'; // main WhatsApp number (no plus)
+
+// === Helper Functions ===
+function isMobileDevice() {
+  return /Android|iPhone|iPad|iPod|Opera Mini|IEMobile/i.test(navigator.userAgent);
 }
 
-// Book buttons on cards (room quick book)
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.book-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const roomText = btn.getAttribute('data-room') || btn.textContent.trim();
-      // Ask user for dates & guests using a modal-like prompt sequence (simple)
-      const checkin = prompt('Check-in date (YYYY-MM-DD)', '') || '';
-      const checkout = prompt('Check-out date (YYYY-MM-DD)', '') || '';
-      const adults = prompt('Number of adults', '2') || '2';
-      const children = prompt('Number of children', '0') || '0';
+function openWhatsApp(number, message) {
+  const encodedMsg = encodeURIComponent(message);
+  let url = '';
 
-      const message = `Hello Marian Hotel, I want to book: ${roomText}. Check-in: ${checkin}. Check-out: ${checkout}. Adults: ${adults}. Children: ${children}.`;
+  // Use native app if mobile, web if desktop
+  if (isMobileDevice()) {
+    url = `whatsapp://send?phone=${number}&text=${encodedMsg}`;
+  } else {
+    url = `https://web.whatsapp.com/send?phone=${number}&text=${encodedMsg}`;
+  }
+
+  // Open in new tab or app
+  window.open(url, '_blank', 'noopener,noreferrer');
+}
+
+// === DOM Ready ===
+document.addEventListener('DOMContentLoaded', () => {
+  // Prevent accidental form submission by Enter key
+  const reservationForm = document.getElementById('reservationForm');
+  if (reservationForm) {
+    reservationForm.addEventListener('submit', (e) => e.preventDefault());
+  }
+
+  // Quick book buttons on room cards
+  document.querySelectorAll('.book-btn').forEach(btn => {
+    if (btn.tagName.toLowerCase() === 'a') return;
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const roomText = btn.getAttribute('data-room') || btn.textContent.trim();
+      const message = `Hello Grand Seasons Hotel, I want to book: ${roomText}.`;
       openWhatsApp(WA_NUMBER_PRIMARY, message);
     });
   });
 
-  // Hero reservation button
+  // Hero section “Book Now” button
   const heroBtn = document.getElementById('heroBookBtn');
   if (heroBtn) {
-    heroBtn.addEventListener('click', () => {
-      const checkin = document.getElementById('heroCheckin').value || 'TBD';
-      const checkout = document.getElementById('heroCheckout').value || 'TBD';
-      const adults = document.getElementById('heroAdults').value || 'TBD';
-      const children = document.getElementById('heroChildren').value || 'TBD';
-      const message = `Hello Marian Hotel, I would like to book a room. Check-in: ${checkin}. Check-out: ${checkout}. Adults: ${adults}. Children: ${children}.`;
+    heroBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const checkin = document.getElementById('heroCheckin')?.value || 'TBD';
+      const checkout = document.getElementById('heroCheckout')?.value || 'TBD';
+      const adults = document.getElementById('heroAdults')?.value || 'TBD';
+      const children = document.getElementById('heroChildren')?.value || 'TBD';
+      const message = `Hello Grand Seasons Hotel, I would like to book a room. Check-in: ${checkin}. Check-out: ${checkout}. Adults: ${adults}. Children: ${children}.`;
       openWhatsApp(WA_NUMBER_PRIMARY, message);
     });
   }
 
-  // Reservation form full page
-  const resBtn = document.getElementById('resBookBtn');
-  if (resBtn) {
-    resBtn.addEventListener('click', () => {
-      const room = document.getElementById('resRoom').value;
-      const name = document.getElementById('resName').value || 'Guest';
-      const checkin = document.getElementById('resCheckin').value || 'TBD';
-      const checkout = document.getElementById('resCheckout').value || 'TBD';
-      const adults = document.getElementById('resAdults').value || 'TBD';
-      const children = document.getElementById('resChildren').value || 'TBD';
+  // === NEW Reservation Section ===
+  const newReservationForm = document.getElementById('reservationForm');
+  if (newReservationForm) {
+    newReservationForm.addEventListener('submit', (e) => {
+      e.preventDefault();
 
-      const message = `Hello Marian Hotel, my name is ${name}. I would like to book: ${room}. Check-in: ${checkin}. Check-out: ${checkout}. Adults: ${adults}. Children: ${children}.`;
+      const name = document.getElementById('guestName')?.value.trim();
+      const room = document.getElementById('roomType')?.value;
+      const checkin = document.getElementById('checkIn')?.value;
+      const checkout = document.getElementById('checkOut')?.value;
+      const adults = document.getElementById('adults')?.value || '1';
+      const children = document.getElementById('children')?.value || '0';
+
+      if (!name || !room || !checkin || !checkout) {
+        alert('Please fill in all required fields.');
+        return;
+      }
+
+      const message = `Hello Grand Seasons Hotel, my name is ${name}. I would like to book a ${room}. Check-in: ${checkin}, Check-out: ${checkout}. Adults: ${adults}, Children: ${children}.`;
+
+      // Show temporary toast (mobile-friendly feedback)
+      showToast('Opening WhatsApp...');
       openWhatsApp(WA_NUMBER_PRIMARY, message);
     });
   }
 });
 
+// === Simple Toast Notification ===
+function showToast(message) {
+  const toast = document.createElement('div');
+  toast.textContent = message;
+  toast.style.position = 'fixed';
+  toast.style.bottom = '20px';
+  toast.style.left = '50%';
+  toast.style.transform = 'translateX(-50%)';
+  toast.style.background = '#28a745';
+  toast.style.color = '#fff';
+  toast.style.padding = '10px 18px';
+  toast.style.borderRadius = '20px';
+  toast.style.fontSize = '14px';
+  toast.style.boxShadow = '0 3px 10px rgba(0,0,0,0.2)';
+  toast.style.zIndex = '9999';
+  toast.style.transition = 'opacity 0.4s ease';
+  document.body.appendChild(toast);
+
+  setTimeout(() => { toast.style.opacity = '0'; }, 2000);
+  setTimeout(() => { toast.remove(); }, 2500);
+}
+
+// === Slideshow ===
 let slideIndex = 0;
 showSlides();
-
 function showSlides() {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
+  const slides = document.getElementsByClassName('mySlides');
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = 'none';
   }
   slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}
-  slides[slideIndex-1].style.display = "block";
-  setTimeout(showSlides, 3000); // Change image every 2 seconds
+  if (slideIndex > slides.length) slideIndex = 1;
+  if (slides[slideIndex - 1]) slides[slideIndex - 1].style.display = 'block';
+  setTimeout(showSlides, 3000);
 }
