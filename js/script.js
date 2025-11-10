@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       const roomText = btn.getAttribute('data-room') || btn.textContent.trim();
-      const message = `Hello Grand Seasons Hotel, I want to book: ${roomText}.`;
+      const message = `Hello Marian  Hotel, I want to book: ${roomText}.`;
       openWhatsApp(WA_NUMBER_PRIMARY, message);
     });
   });
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const checkout = document.getElementById('heroCheckout')?.value || 'TBD';
       const adults = document.getElementById('heroAdults')?.value || 'TBD';
       const children = document.getElementById('heroChildren')?.value || 'TBD';
-      const message = `Hello Grand Seasons Hotel, I would like to book a room. Check-in: ${checkin}. Check-out: ${checkout}. Adults: ${adults}. Children: ${children}.`;
+      const message = `Hello Marian Hotel, I would like to book a room. Check-in: ${checkin}. Check-out: ${checkout}. Adults: ${adults}. Children: ${children}.`;
       openWhatsApp(WA_NUMBER_PRIMARY, message);
     });
   }
