@@ -111,7 +111,7 @@
             <img src="images/stan.jpg" loading="lazy" alt="Diplomatic Suite">
             <div class="card-body text-center">
               <h5 class="card-title">Standard Room</h5>
-              <p class="card-text">From ₦50,000.00 /night • 6x4</p>
+              <p class="card-text">From ₦50,000.00 /night • 6x4</p><p>(Strictly No Smoking)</p>
               <button class="btn btn-success book-btn" for="resRoom" id="resBookBtn" data-room="Diplomatic Suite • ₦150,000 • 60 Sqm">Book now</button>
             </div>
           </div>
@@ -124,7 +124,8 @@
             <img src="images/rm1.jpg" class="card-img-top" alt="Executive Room">
             <div class="card-body text-center">
               <h5 class="card-title">Executive Room</h5>
-              <p class="card-text">From ₦50,000.00 /night • 1 King Bed Sleeps 2 6x6</p>
+              <p class="card-text">From ₦40,000.00 /night • 1 King Bed Sleeps 2 6x6 </p><p>(Strictly No Smoking)</p>
+              
               <button class="btn btn-success book-btn" for="resRoom" id="resBookBtn" data-room="Executive Room • ₦105,000 • 42 Sqm">Book now</button>
             </div>
           </div>
@@ -136,7 +137,7 @@
             <img src="images/rm4.jpg" class="card-img-top" alt="Classic Room">
             <div class="card-body text-center">
               <h5 class="card-title">Suite</h5>
-              <p class="card-text">From ₦80,000.00 /night 6x6</p>
+              <p class="card-text">From ₦70,000.00 /night 6x6</p><p>(Strictly No Smoking)</p>
               <button class="btn btn-success book-btn" for="resRoom" id="resBookBtn" data-room="Classic Room • ₦80,000 • 46 Sqm">Book now</button>
             </div>
           </div>
@@ -148,7 +149,7 @@
             <img src="images/apt.jpg" class="card-img-top" loading="lazy" alt="Deluxe Room">
             <div class="card-body text-center">
               <h5 class="card-title" id="resRoom" >Apartment 2bed</h5>
-              <p class="card-text">From ₦150,000.00 /night  </p>
+              <p class="card-text">From ₦150,000.00 /night  </p><p>(Strictly No Smoking)</p>
               <button class="btn btn-success book-btn" for="resRoom" id="resBookBtn" data-room="Deluxe Room • ₦90,000 • 35 Sqm">Book now</button>
             </div>
           </div>
@@ -230,52 +231,94 @@
     </div>
   </section>
   <!-- Reservation section (anchor target) -->
-  <section id="reservation" class="py-5">
-    <div class="container">
-      <h2 class="text-center mb-4">Make a Reservation</h2>
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <form id="reservationForm" class="row g-3">
-            <div class="col-md-6">
-              <label for="resRoom" class="form-label">Room</label>
-              <select id="resRoom" class="form-select">
-                <option>Suite • ₦80,000 • 6x6</option>
-                <option>Standard Room • ₦50,000 • 6x4</option>
+ 
+  </section>
+
+  <section id="reservation" class="reservation-section" style="background: #f9fafb; padding: 60px 20px;">
+    <div class="container" style="max-width: 600px; margin: auto;">
+      <h2 style="font-size: 1.8rem; font-weight: 600; text-align: center; color: #222;">Book Your Stay</h2>
+      <p style="text-align: center; color: #555; margin-top: 10px; font-size: 0.95rem;">
+        Reserve your room easily via WhatsApp. Just fill in your details below.
+      </p>
+  
+      <form id="reservationForm" class="reservation-form" style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+        <div class="form-group" style="display: flex; flex-direction: column; align-items: flex-start; gap: 6px;">
+          <label for="guestName" style="font-weight: 500;">Full Name</label>
+          <input type="text" id="guestName" placeholder="Enter your name" required
+                 style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem;">
+        </div>
+  
+        <div class="form-group" style="display: flex; flex-direction: column; align-items: flex-start; gap: 6px;">
+          <label for="roomType" style="font-weight: 500;">Room Type</label>
+          <select id="roomType" required
+                  style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem;">
+            <option value="">Select a Room</option>
+            <option>Suite • ₦70,000 • 6x6</option>
+            <option>Standard Room • ₦40,000 • 6x4</option>
                 <option>Executive Room • ₦50,000 • 6x6</option>
                 <option>Apartment 2 bedroom • ₦150,000 </option>
                 <option>Apartment 1 bedroom • ₦100,000 </option>
-                <option>Apartment Single Room • ₦50,000 </option>
-              </select>
-            </div>
-            <div class="col-md-6">
-              <label for="resName" class="form-label">Full name</label>
-              <input type="text" id="resName" class="form-control" placeholder="Your full name">
-            </div>
-            <div class="col-md-6">
-              <label for="resCheckin" class="form-label">Check-in</label>
-              <input type="date" id="resCheckin" class="form-control">
-            </div>
-            <div class="col-md-6">
-              <label for="resCheckout" class="form-label">Check-out</label>
-              <input type="date" id="resCheckout" class="form-control">
-            </div>
-            <div class="col-md-3">
-              <label for="resAdults" class="form-label">Adults</label>
-              <input type="number" id="resAdults" class="form-control" min="1" value="2">
-            </div>
-            <div class="col-md-3">
-              <label for="resChildren" class="form-label">Children</label>
-              <input type="number" id="resChildren" class="form-control" min="0" value="0">
-            </div>
-            <div class="col-md-6 d-flex align-items-end">
-              <button type="button" id="resBookBtn" class="btn btn-success w-100">Book via WhatsApp</button>
-            </div>
-          </form>
+                <option>Apartment Single Room • ₦70,000 </option>
+          </select>
         </div>
-      </div>
+  
+        <div class="form-row" style="display: flex; gap: 1rem; flex-wrap: wrap;">
+          <div class="form-group" style="flex: 1; min-width: 140px; display: flex; flex-direction: column; gap: 6px;">
+            <label for="checkIn" style="font-weight: 500;">Check-in</label>
+            <input type="date" id="checkIn" required
+                   style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px;">
+          </div>
+          <div class="form-group" style="flex: 1; min-width: 140px; display: flex; flex-direction: column; gap: 6px;">
+            <label for="checkOut" style="font-weight: 500;">Check-out</label>
+            <input type="date" id="checkOut" required
+                   style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px;">
+          </div>
+        </div>
+  
+        <div class="form-row" style="display: flex; gap: 1rem; flex-wrap: wrap;">
+          <div class="form-group" style="flex: 1; min-width: 120px; display: flex; flex-direction: column; gap: 6px;">
+            <label for="adults" style="font-weight: 500;">Adults</label>
+            <input type="number" id="adults" min="1" value="1"
+                   style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px;">
+          </div>
+          <div class="form-group" style="flex: 1; min-width: 120px; display: flex; flex-direction: column; gap: 6px;">
+            <label for="children" style="font-weight: 500;">Children</label>
+            <input type="number" id="children" min="0" value="0"
+                   style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px;">
+          </div>
+        </div>
+  
+        <button type="submit" id="bookNowBtn"
+                style="background: #198754; color: white; font-size: 1rem; font-weight: 600; padding: 12px; border: none; border-radius: 8px; margin-top: 10px; cursor: pointer; width: 100%; transition: background 0.3s;">
+          Book via WhatsApp
+        </button>
+      </form>
     </div>
   </section>
-
+  
+  <!-- Mobile styling -->
+  <style>
+    @media (max-width: 600px) {
+      .reservation-section h2 {
+        font-size: 1.5rem;
+      }
+      .reservation-section p {
+        font-size: 0.9rem;
+        margin: 0 10px;
+      }
+      .reservation-form {
+        gap: 0.8rem;
+      }
+      .form-row {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+    }
+  
+    button#bookNowBtn:hover {
+      background: #146c43;
+    }
+  </style>
   <!-- Footer -->
   <footer class="bg-dark text-light py-4">
     <div class="container text-center">
