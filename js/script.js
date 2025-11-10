@@ -1,5 +1,5 @@
 // Global config
-const WA_NUMBER_PRIMARY = '2348039403488'; // main WhatsApp (no plus)
+const WA_NUMBER_PRIMARY = '2348104391070'; // main WhatsApp (no plus)
 
 // Helper to open WhatsApp with message
 function openWhatsApp(number, message) {
