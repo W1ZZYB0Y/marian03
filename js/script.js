@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      const message = `Hello Grand Seasons Hotel, my name is ${name}. I would like to book a ${room}. Check-in: ${checkin}, Check-out: ${checkout}. Adults: ${adults}, Children: ${children}.`;
+      const message = `Hello Marian Hotel, my name is ${name}. I would like to book a ${room}. Check-in: ${checkin}, Check-out: ${checkout}. Adults: ${adults}, Children: ${children}.`;
 
       // Show temporary toast (mobile-friendly feedback)
       showToast('Opening WhatsApp...');
